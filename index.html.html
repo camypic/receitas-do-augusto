@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Receitas do Augusto — 100 Receitas Caseiras, Fáceis e Rápidas</title>
+<meta name="description" content="Panela de Ferro, Coração Aberto: 100 receitas caseiras do Sítio do Augusto. Comida de verdade para o seu dia a dia.">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<!--
+=====================================================================
+  CONFIGURAÇÃO:
+  1) Foto: embutida via link (topo + capa do livro). Para durar
+     pra sempre, salve a imagem como "augusto.png" na mesma pasta.
+  2) Notificações: procure por NOTIF no fim do arquivo.
+  3) Checkout: troque LINK_CHECKOUT pelo link da Kiwify/Hotmart.
+  Ícones: todos desenhados em CSS 3D (sem depender de emoji).
+=====================================================================
+-->
+<style>
+:root{--terra:#B5542B;--terra2:#8a3d1f;--oliva:#6B7F3A;--creme:#F5EDD8;--creme2:#FBF6E9;--marrom:#3E2F23;--areia:#EDE0BC}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Lora',serif;color:var(--marrom);background:var(--creme);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+h1,h2,h3{font-family:'Bitter',serif;line-height:1.2}
+.cav{font-family:'Caveat',cursive}
+
+/* ============================================================
+   ÍCONES 3D DESENHADOS EM CSS (subsituem todos os emojis de comida)
+   ============================================================ */
+.i3d{position:relative;display:inline-block;width:1em;height:1em;vertical-align:-.12em;flex-shrink:0}
+/* tomate */
+.t3-tomate{border-radius:50%;background:radial-gradient(circle at 33% 28%,#ff9d6b,#ee4d2c 40%,#cd2f19 70%,#8f1d0e);box-shadow:inset -.07em -.09em .14em rgba(90,12,4,.5),inset .03em .05em .07em rgba(255,235,220,.3),0 .07em .12em rgba(62,47,35,.28)}
+.t3-tomate::before{content:"";position:absolute;top:-.15em;left:50%;width:.44em;height:.24em;transform:translateX(-50%);background:#4e7a28;clip-path:polygon(0 100%,12% 25%,25% 80%,38% 10%,50% 85%,62% 10%,75% 80%,88% 25%,100% 100%)}
+.t3-tomate::after{content:"";position:absolute;top:.07em;left:.16em;width:.24em;height:.15em;border-radius:50%;background:rgba(255,255,255,.45);filter:blur(.5px);transform:rotate(-22deg)}
+/* alho */
+.t3-alho{border-radius:48% 48% 55% 55%/62% 62% 42% 42%;background:repeating-linear-gradient(88deg,rgba(186,164,120,.22) 0 .035em,transparent .035em .11em),radial-gradient(circle at 35% 25%,#fffdf5,#f4ead2 45%,#d9c8a4 80%,#b9a67e);box-shadow:inset -.05em -.07em .12em rgba(140,120,80,.4),0 .06em .11em rgba(62,47,35,.25)}
+.t3-alho::before{content:"";position:absolute;top:-.09em;left:50%;transform:translateX(-50%);width:.18em;height:.15em;border-radius:50% 50% 30% 30%;background:linear-gradient(#ddd0ac,#b7a375)}
+/* cebola */
+.t3-cebola{border-radius:50%;background:repeating-linear-gradient(90deg,rgba(160,90,30,.2) 0 .03em,transparent .03em .1em),radial-gradient(circle at 35% 28%,#f7d9a0,#e8a94f 45%,#c07f2e 75%,#8f5a1c);box-shadow:inset -.07em -.1em .16em rgba(110,60,15,.5),inset .03em .04em .06em rgba(255,245,225,.4),0 .07em .12em rgba(62,47,35,.25)}
+.t3-cebola::before{content:"";position:absolute;top:-.11em;left:50%;transform:translateX(-50%);width:.12em;height:.16em;border-radius:40% 40% 0 0;background:linear-gradient(#c9a763,#8f6b32)}
+.t3-cebola::after{content:"";position:absolute;bottom:-.06em;left:50%;transform:translateX(-50%);width:.05em;height:.08em;border-radius:0 0 60% 60%;background:#caa25f}
+/* folha de couve */
+.t3-folha{width:.92em;height:.92em;transform:rotate(-18deg);border-radius:0 70% 0 70%;background:linear-gradient(135deg,#8ab556,#5e8c33 55%,#446e22);box-shadow:inset -.04em -.05em .1em rgba(30,50,10,.5),0 .05em .1em rgba(62,47,35,.22)}
+.t3-folha::before{content:"";position:absolute;top:6%;left:6%;width:80%;height:80%;border-radius:inherit;background:linear-gradient(135deg,transparent 44%,rgba(240,250,220,.4) 47% 53%,transparent 56%)}
+.t3-folha::after{content:"";position:absolute;top:10%;left:10%;width:70%;height:70%;border-radius:inherit;background:repeating-linear-gradient(135deg,transparent 0 .14em,rgba(0,0,0,.07) .14em .17em)}
+/* pimenta */
+.t3-pimenta{width:.58em;height:1em;transform:rotate(14deg);border-radius:45% 55% 48% 52%/85% 85% 32% 32%;background:linear-gradient(100deg,#ff8a5c,#e8351f 45%,#a01a0a);box-shadow:inset -.05em -.06em .1em rgba(90,10,5,.45),0 .05em .1em rgba(62,47,35,.22)}
+.t3-pimenta::before{content:"";position:absolute;top:-.13em;left:30%;width:.09em;height:.2em;border-radius:2px;background:linear-gradient(#6a9c3e,#4e7a28);transform:rotate(-12deg)}
+/* cenoura */
+.t3-cenoura{width:.58em;height:1em;border-radius:50% 50% 46% 46%/40% 40% 60% 60%;background:linear-gradient(105deg,#ffb35c,#f07e1d 55%,#c25a0d);box-shadow:inset -.04em -.05em .1em rgba(120,50,5,.4),0 .05em .1em rgba(62,47,35,.2)}
+.t3-cenoura::before{content:"";position:absolute;top:-.22em;left:50%;width:.52em;height:.3em;transform:translateX(-50%);background:repeating-linear-gradient(70deg,#5c983c 0 .04em,transparent .04em .1em),repeating-linear-gradient(-70deg,#478229 0 .04em,transparent .04em .1em);border-radius:30% 30% 0 0}
+/* milho */
+.t3-milho{width:.6em;height:1em;border-radius:44% 44% 48% 48%/28% 28% 72% 72%;background:repeating-linear-gradient(0deg,rgba(170,110,15,.16) 0 .05em,transparent .05em .12em),repeating-linear-gradient(90deg,rgba(170,110,15,.16) 0 .04em,transparent .04em .11em),linear-gradient(100deg,#ffe28a,#f4c545 55%,#d99a1f);box-shadow:inset -.05em -.06em .1em rgba(140,80,10,.35),0 .05em .1em rgba(62,47,35,.2)}
+.t3-milho::before{content:"";position:absolute;bottom:-.03em;left:-.16em;width:.42em;height:.6em;background:linear-gradient(120deg,#7fae4a,#4e7a28);border-radius:0 60% 40% 75%/0 70% 60% 85%;transform:rotate(16deg)}
+.t3-milho::after{content:"";position:absolute;bottom:-.03em;right:-.16em;width:.42em;height:.6em;background:linear-gradient(240deg,#6a9c3e,#446e22);border-radius:60% 0 75% 40%/70% 0 85% 60%;transform:rotate(-16deg)}
+/* pão */
+.t3-pao{width:1em;height:.68em;border-radius:55% 55% 45% 45%/72% 72% 32% 32%;background:repeating-linear-gradient(78deg,transparent 0 .16em,rgba(140,90,40,.32) .16em .21em),linear-gradient(180deg,#e0ab63,#c88a42 55%,#a96a2a);box-shadow:inset 0 -.06em .1em rgba(120,70,20,.45),0 .06em .1em rgba(62,47,35,.22)}
+/* ovo */
+.t3-ovo{width:.74em;height:.96em;border-radius:50%/58% 58% 42% 42%;background:radial-gradient(circle at 35% 28%,#fffdf7,#f6ecd8 55%,#ddc9a6);box-shadow:inset -.05em -.07em .1em rgba(160,140,100,.4),0 .06em .1em rgba(62,47,35,.22)}
+/* laranja */
+.t3-laranja{border-radius:50%;background:radial-gradient(circle at 33% 28%,#ffc27a,#f5923e 45%,#d9701a 75%,#a54e0c);box-shadow:inset -.07em -.09em .14em rgba(130,60,5,.5),0 .07em .12em rgba(62,47,35,.25)}
+.t3-laranja::before{content:"";position:absolute;top:-.09em;left:55%;width:.24em;height:.14em;border-radius:0 100% 0 100%;background:linear-gradient(135deg,#6fa344,#4e7a28);transform:rotate(-14deg)}
+.t3-laranja::after{content:"";position:absolute;top:-.07em;left:42%;width:.08em;height:.08em;border-radius:50%;background:#7d5a2e}
+/* batata-doce */
+.t3-batata{width:.6em;height:1em;transform:rotate(12deg);border-radius:50%/40% 40% 60% 60%;background:linear-gradient(100deg,#d99a6f,#a45c33 55%,#7e3f1e);box-shadow:inset -.05em -.06em .1em rgba(80,30,5,.4),0 .05em .1em rgba(62,47,35,.22)}
+/* banana */
+.t3-banana{width:1em;height:.56em;transform:rotate(-6deg);border-radius:62% 38% 55% 45%/95% 95% 120% 120%;background:linear-gradient(180deg,#ffe27a,#f2c94c 60%,#d9a621);box-shadow:inset 0 -.05em .09em rgba(170,120,10,.4),0 .05em .09em rgba(62,47,35,.2)}
+.t3-banana::before{content:"";position:absolute;right:-.02em;top:36%;width:.1em;height:.1em;border-radius:50%;background:#8a6b1d}
+.t3-banana::after{content:"";position:absolute;left:-.02em;top:30%;width:.08em;height:.08em;border-radius:50%;background:#7a5c15}
+/* xícara de café */
+.t3-cafe{width:.8em;height:.55em;border-radius:10% 10% 42% 42%;background:linear-gradient(180deg,#B5542B 0 .11em,#FBF6E9 .11em);box-shadow:inset 0 -.05em .08em rgba(140,100,60,.35),0 .05em .1em rgba(62,47,35,.22)}
+.t3-cafe::before{content:"";position:absolute;top:-.15em;left:8%;width:84%;height:.28em;border-radius:0 0 50% 50%;background:radial-gradient(ellipse at 50% 35%,#6B4A2E,#3E2A18 78%);box-shadow:inset 0 .05em 0 rgba(255,255,255,.3)}
+.t3-cafe::after{content:"";position:absolute;top:-.42em;left:32%;width:.1em;height:.2em;border-radius:50%;background:linear-gradient(rgba(245,237,216,0),rgba(245,237,216,.75));filter:blur(1px);box-shadow:.24em -.1em 0 rgba(245,237,216,.5)}
+/* panela de ferro */
+.t3-panela{width:.95em;height:.62em;border-radius:10% 10% 38% 38%;background:linear-gradient(180deg,#5f5f66 0 .16em,#3a3a40 .16em);box-shadow:inset 0 -.06em .1em rgba(0,0,0,.5),0 .05em .1em rgba(62,47,35,.25)}
+.t3-panela::before{content:"";position:absolute;top:-.08em;left:5%;width:90%;height:.13em;border-radius:40%;background:#26262b}
+.t3-panela::after{content:"";position:absolute;top:-.36em;left:26%;width:.09em;height:.18em;border-radius:50%;background:rgba(245,237,216,.55);filter:blur(1px);box-shadow:.3em -.07em 0 rgba(245,237,216,.5),.15em .02em 0 rgba(245,237,216,.4)}
+/* ovo frito */
+.t3-ovofrito{width:1em;height:.8em;border-radius:58% 42% 55% 45%/72% 66% 34% 28%;background:radial-gradient(circle at 40% 45%,#fffef8,#f7f0dd 70%,#ece0c0);box-shadow:inset -.04em -.05em .09em rgba(190,170,120,.4),0 .05em .09em rgba(62,47,35,.18)}
+.t3-ovofrito::before{content:"";position:absolute;top:24%;left:33%;width:.36em;height:.36em;border-radius:50%;background:radial-gradient(circle at 40% 35%,#ffd98a,#f0a63a 55%,#d9861d);box-shadow:inset -.03em -.04em .07em rgba(150,90,10,.5)}
+/* cupcake */
+.t3-bolo{width:.84em;height:.92em}
+.t3-bolo::before{content:"";position:absolute;bottom:0;left:0;width:100%;height:46%;border-radius:12% 12% 30% 30%;background:repeating-linear-gradient(90deg,#cd6a33 0 .1em,#B5542B .1em .2em);box-shadow:inset 0 -.05em .08em rgba(90,30,5,.35),0 .05em .1em rgba(62,47,35,.2)}
+.t3-bolo::after{content:"";position:absolute;top:0;left:0;width:100%;height:62%;border-radius:55% 55% 42% 42%;background:radial-gradient(circle at 35% 30%,#fff6e3,#f0dcb2 55%,#d9bd85);box-shadow:inset -.04em -.05em .1em rgba(160,120,60,.35)}
+/* gota (mel) */
+.t3-gota{width:.68em;height:.94em;border-radius:50%/62% 62% 38% 38%;background:radial-gradient(circle at 35% 28%,#ffd98a,#eeb13e 50%,#c07f13);box-shadow:inset -.05em -.06em .1em rgba(140,80,5,.4),0 .05em .1em rgba(62,47,35,.22)}
+/* pote de conserva */
+.t3-pote{width:.72em;height:.9em;border-radius:16% 16% 28% 28%;background:linear-gradient(105deg,rgba(210,235,210,.9),rgba(165,205,165,.92) 60%,rgba(125,170,125,.92));box-shadow:inset .04em 0 .06em rgba(255,255,255,.5),inset -.05em -.05em .09em rgba(70,110,70,.4),0 .06em .1em rgba(62,47,35,.2)}
+.t3-pote::before{content:"";position:absolute;top:-.13em;left:6%;width:88%;height:.15em;border-radius:22%;background:linear-gradient(#9a7a45,#6b522c)}
+.t3-pote::after{content:"";position:absolute;bottom:12%;left:16%;width:42%;height:52%;border-radius:18%;background:linear-gradient(#e8b04a,#c5831f)}
+/* ramo de cheiro-verde */
+.t3-ramo{width:.9em;height:1em}
+.t3-ramo::before{content:"";position:absolute;left:46%;top:8%;width:.06em;height:88%;border-radius:2px;background:linear-gradient(#6a9c3e,#4e7a28)}
+.t3-ramo::after{content:"";position:absolute;top:4%;left:6%;width:84%;height:64%;background:radial-gradient(ellipse at 28% 100%,#7fae4a 0 34%,transparent 36%),radial-gradient(ellipse at 50% 78%,#6a9c3e 0 34%,transparent 36%),radial-gradient(ellipse at 72% 100%,#7fae4a 0 34%,transparent 36%),radial-gradient(ellipse at 40% 55%,#5c8a34 0 32%,transparent 34%),radial-gradient(ellipse at 60% 30%,#6a9c3e 0 32%,transparent 34%)}
+/* coxa de frango */
+.t3-frango{width:.95em;height:.74em;transform:rotate(38deg);border-radius:72% 72% 48% 48%/88% 88% 42% 42%;background:radial-gradient(circle at 35% 30%,#e8b06a,#c98a3e 55%,#9c6220);box-shadow:inset -.05em -.06em .1em rgba(110,60,10,.4),0 .05em .1em rgba(62,47,35,.22)}
+.t3-frango::before{content:"";position:absolute;top:-.15em;right:2%;width:.3em;height:.17em;border-radius:45% 55% 60% 40%;background:linear-gradient(#fdf6e8,#e3d4b4);transform:rotate(42deg)}
+/* troféu */
+.t3-trofeu{width:.85em;height:1em}
+.t3-trofeu::before{content:"";position:absolute;top:0;left:10%;width:80%;height:.6em;border-radius:50% 50% 12% 12%;background:linear-gradient(#ffd98a,#e8a83a 60%,#b57e14);box-shadow:inset -.04em -.05em .09em rgba(130,80,5,.45)}
+.t3-trofeu::after{content:"";position:absolute;top:.5em;left:36%;width:.28em;height:.34em;background:linear-gradient(#e8a83a,#b57e14);clip-path:polygon(0 0,100% 0,72% 100%,28% 100%)}
+/* medalhas */
+.t3-medal{width:.85em;height:.85em;border-radius:50%;box-shadow:inset -.05em -.06em .1em rgba(0,0,0,.28),0 .05em .1em rgba(62,47,35,.25)}
+.t3-medal::before{content:"";position:absolute;top:-.3em;left:50%;transform:translateX(-50%);width:.13em;height:.32em;background:#B5542B;box-shadow:.19em 0 #6B7F3A;border-radius:2px 2px 0 0}
+.t3-medal::after{content:attr(data-n);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Bitter',serif;font-weight:900;color:rgba(255,255,255,.9);font-size:.42em;text-shadow:0 .02em .03em rgba(0,0,0,.35)}
+.t3-ouro{background:radial-gradient(circle at 35% 30%,#ffe28a,#f0b83a 55%,#b57e14)}
+.t3-prata{background:radial-gradient(circle at 35% 30%,#f7f7f7,#cfcfcf 55%,#8f8f8f)}
+.t3-bronze{background:radial-gradient(circle at 35% 30%,#e8a56a,#c47a3a 55%,#8f5216)}
+/* escudo da garantia */
+.t3-escudo{width:.85em;height:1em;background:linear-gradient(#7d9a4a,#5c7a30);clip-path:polygon(50% 0,100% 12%,100% 55%,50% 100%,0 55%,0 12%)}
+.t3-escudo::before{content:"✓";position:absolute;top:32%;left:50%;transform:translateX(-50%);color:#F5EDD8;font-family:'Bitter',serif;font-weight:900;font-size:.5em}
+/* cesta da feira */
+.t3-cesta{width:.95em;height:.68em;border-radius:15% 15% 45% 45%;background:repeating-linear-gradient(45deg,#c9985a 0 .08em,#b5824a .08em .16em);border-top:.06em solid #8a6236;box-shadow:inset 0 -.06em .1em rgba(110,70,25,.4),0 .05em .1em rgba(62,47,35,.22)}
+.t3-cesta::before{content:"";position:absolute;top:-.24em;left:16%;width:68%;height:.3em;border:.055em solid #b5824a;border-bottom:none;border-radius:50% 50% 0 0}
+/* calendário */
+.t3-calend{width:.85em;height:.92em;border-radius:12%;background:linear-gradient(#FBF6E9 0 .32em,#B5542B .32em);box-shadow:0 .05em .1em rgba(62,47,35,.2)}
+.t3-calend::before{content:"";position:absolute;top:-.1em;left:18%;width:.08em;height:.2em;background:#8a6d3b;border-radius:2px;box-shadow:.36em 0 #8a6d3b}
+.t3-calend::after{content:"";position:absolute;top:44%;left:20%;width:.14em;height:.12em;background:#e8d9b0;border-radius:2px;box-shadow:.18em 0 #e8d9b0,.36em 0 #e8d9b0,0 .16em #e8d9b0,.18em .16em #e8d9b0,.36em .16em #e8d9b0}
+/* setas de troca */
+.t3-troca{width:.95em;height:.78em}
+.t3-troca::before{content:"";position:absolute;top:8%;left:6%;width:.8em;height:.18em;background:#6B7F3A;clip-path:polygon(0 18%,72% 18%,72% 0,100% 50%,72% 100%,72% 82%,0 82%)}
+.t3-troca::after{content:"";position:absolute;bottom:8%;right:6%;width:.8em;height:.18em;background:#B5542B;clip-path:polygon(100% 18%,28% 18%,28% 0,0 50%,28% 100%,28% 82%,100% 82%)}
+/* bolinha "ao vivo" */
+.pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e53935;box-shadow:0 0 8px 1px rgba(229,57,53,.8);animation:pulsar 1.6s infinite}
+@keyframes pulsar{50%{opacity:.45}}
+
+/* ===== INGREDIENTES QUE ENTRAM NO SCROLL ===== */
+section,header.hero,.fim{position:relative}
+.ing{position:absolute;z-index:1;font-size:clamp(28px,4.6vw,52px);opacity:0;transform:translateY(90px) scale(.35) rotate(-30deg);transition:opacity 1.1s cubic-bezier(.2,.7,.3,1),transform 1.1s cubic-bezier(.2,.7,.3,1);pointer-events:none;filter:drop-shadow(0 10px 12px rgba(62,47,35,.3))}
+.ing.ativo{opacity:.95;transform:translateY(0) scale(1) rotate(var(--rot,0deg))}
+.ing .fl{display:block;animation:flutinha 6s ease-in-out infinite}
+.ing .fl .i3d{display:block}
+@keyframes flutinha{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-9px) rotate(5deg)}}
+
+/* ===== CARDS QUE ENTRAM NO SCROLL ===== */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
+.reveal.ativo{opacity:1;transform:none}
+.caps .cap:nth-child(2),.cards3 .bcard:nth-child(2),.vantagens .vant:nth-child(2),.podio .pcard:nth-child(2){transition-delay:.1s}
+.caps .cap:nth-child(3),.cards3 .bcard:nth-child(3),.vantagens .vant:nth-child(3),.podio .pcard:nth-child(3){transition-delay:.2s}
+.caps .cap:nth-child(4){transition-delay:.15s}
+.caps .cap:nth-child(5){transition-delay:.2s}
+.caps .cap:nth-child(6){transition-delay:.25s}
+.caps .cap:nth-child(7){transition-delay:.3s}
+.caps .cap:nth-child(8){transition-delay:.35s}
+.vantagens .vant:nth-child(4){transition-delay:.3s}
+.vantagens .vant:nth-child(5){transition-delay:.4s}
+.dois>div:nth-child(2){transition-delay:.15s}
+@media (prefers-reduced-motion:reduce){.ing,.reveal{transition:none;opacity:1;transform:none}.ing .fl,.flutua,.pulse{animation:none}}
+
+/* ===== TOPO ===== */
+.topo{background:var(--terra);color:var(--creme);text-align:center;padding:10px 16px;font-family:'Bitter',serif;font-size:clamp(11px,2vw,13px);letter-spacing:3px;font-weight:700;position:relative;z-index:3}
+.topo .i3d{font-size:15px;vertical-align:-3px;margin-right:7px}
+
+/* ===== HERO ===== */
+.hero{padding:clamp(28px,5vw,46px) 0 clamp(34px,6vw,56px);background:linear-gradient(180deg,var(--creme) 0%,#efe3c4 100%)}
+.hero .grid{display:grid;gap:clamp(28px,5vw,44px);align-items:center}
+.kicker{font-family:'Bitter',serif;font-size:clamp(10px,2vw,12px);letter-spacing:3px;color:var(--oliva);font-weight:700;margin-bottom:14px}
+.hero h1{font-size:clamp(23px,5.2vw,42px);font-weight:900;color:var(--terra);margin-bottom:16px}
+.hero .sub{font-size:clamp(15px,2.4vw,19px);margin-bottom:10px}
+.hero .sub b{color:var(--terra)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 26px}
+.chip{font-family:'Bitter',serif;font-size:clamp(9px,1.8vw,11px);letter-spacing:2px;font-weight:700;color:var(--creme);background:var(--oliva);padding:6px 12px;border-radius:99px}
+.btn{display:block;text-align:center;background:var(--terra);color:var(--creme)!important;font-family:'Bitter',serif;font-weight:900;padding:clamp(15px,3vw,18px) clamp(16px,4vw,26px);border-radius:12px;font-size:clamp(15px,2.6vw,19px);text-decoration:none;letter-spacing:.5px;box-shadow:0 5px 0 #7e371a;transition:transform .15s,box-shadow .15s;position:relative;z-index:3}
+.btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 #7e371a}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #7e371a}
+.trust{text-align:center;font-size:13px;margin-top:12px;color:#6b5a44}
+
+/* ===== FOTO DO AUGUSTO ===== */
+.fotocard{position:relative;background:#fff;padding:13px 13px 18px;border-radius:6px;box-shadow:0 18px 40px rgba(62,47,35,.28);transform:rotate(-1.5deg);max-width:min(440px,100%);margin:0 auto;z-index:2}
+.fotocard img{border-radius:4px;width:100%;height:auto}
+.fotocard figcaption{font-family:'Caveat',cursive;font-size:clamp(17px,3vw,20px);color:var(--terra);text-align:center;margin-top:11px}
+.ingr{position:absolute;z-index:3;font-size:clamp(22px,4vw,34px);filter:drop-shadow(0 5px 7px rgba(62,47,35,.35));animation:flutuar 5s ease-in-out infinite}
+.ingr .i3d{display:block}
+.ingr.tl{top:-18px;left:-20px}
+.ingr.tr{top:-15px;right:-18px;animation-delay:1.3s}
+.ingr.bl{bottom:-16px;left:-22px;animation-delay:2.2s}
+.ingr.br{bottom:-19px;right:-16px;animation-delay:.7s}
+@keyframes flutuar{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-7px) rotate(6deg)}}
+
+/* ===== LETREIRO DE INGREDIENTES ===== */
+.marquee{background:var(--marrom);color:var(--creme);overflow:hidden;padding:11px 0;position:relative;z-index:3}
+.marquee .track{display:flex;width:max-content;animation:rolar 45s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.marquee .grupo{display:flex;align-items:center}
+.marquee span{display:inline-flex;align-items:center;font-family:'Bitter',serif;font-weight:700;font-size:clamp(10px,1.8vw,12px);letter-spacing:2px;white-space:nowrap}
+.marquee .i3d{font-size:clamp(13px,2.4vw,16px);margin-right:9px;vertical-align:middle}
+.marquee span:after{content:"·";margin:0 22px;color:#a08a5f;font-weight:400}
+@keyframes rolar{to{transform:translateX(-50%)}}
+
+/* ===== FAIXAS ===== */
+.faixa{background:var(--terra);color:var(--creme);padding:14px 8px;text-align:center;font-family:'Bitter',serif;font-weight:700;letter-spacing:clamp(2px,1vw,4px);font-size:clamp(10px,1.8vw,13px);position:relative;z-index:3}
+.band{background:var(--areia);border-top:2px dashed #cbb87e;border-bottom:2px dashed #cbb87e;padding:13px 6px;text-align:center;position:relative;z-index:3}
+.band span{display:inline-block;margin:3px 8px;font-size:clamp(18px,3vw,22px)}
+.band .i3d{display:block}
+.band span:nth-child(odd){transform:rotate(-9deg)}
+.band span:nth-child(even){transform:rotate(8deg) translateY(3px)}
+
+/* ===== SEÇÕES ===== */
+section{padding:clamp(40px,7vw,64px) 0}
+h2.tit{font-size:clamp(22px,4vw,34px);color:var(--terra);font-weight:900;text-align:center;margin-bottom:34px}
+h2.tit small{display:block;font-size:clamp(10px,1.8vw,12px);letter-spacing:3px;color:var(--oliva);font-weight:700;margin-bottom:8px}
+h2.tit small .i3d{font-size:13px;vertical-align:-2px;margin-right:4px}
+
+/* ===== HISTÓRIA ===== */
+.cartao{background:var(--areia);border:1px solid #d9c690;padding:clamp(22px,4vw,34px) clamp(18px,4vw,30px);border-radius:8px;box-shadow:4px 6px 18px rgba(62,47,35,.14);max-width:720px;margin:0 auto}
+.cartao p{margin-bottom:16px;font-size:clamp(14px,2vw,16px)}
+.assin{font-family:'Caveat',cursive;font-size:clamp(24px,4vw,30px);color:var(--terra);text-align:right;margin-top:6px}
+.posscript{text-align:center;font-family:'Caveat',cursive;font-size:clamp(18px,3vw,21px);color:var(--oliva);margin-top:22px}
+
+/* ===== DOR ===== */
+.dor{background:var(--marrom);color:var(--creme)}
+.dor h2{color:var(--creme)}
+.dorlista{max-width:640px;margin:0 auto 28px}
+.dorlista li{list-style:none;margin-bottom:14px;font-size:clamp(14px,2vw,16px);padding-left:34px;position:relative}
+.dorlista li:before{content:"✕";position:absolute;left:0;color:#d98c62;font-weight:900}
+.dor .virada{font-family:'Caveat',cursive;font-size:clamp(20px,3.6vw,32px);color:var(--areia);text-align:center;line-height:1.35}
+
+/* ===== CONTEÚDO ===== */
+.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:16px;margin-bottom:40px}
+.cap{background:var(--creme2);border:1.5px solid #d9c690;border-left:5px solid var(--terra);border-radius:8px;padding:18px}
+.cap .n{font-family:'Bitter',serif;font-weight:700;color:var(--oliva);font-size:12.5px;letter-spacing:1px}
+.cap .n .i3d{font-size:16px;vertical-align:-3px;margin-right:5px}
+.cap h3{color:var(--terra);font-size:clamp(15px,2.2vw,16px);margin:4px 0 6px}
+.cap p{font-size:13.5px;color:#5c4b38}
+.vantagens{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:14px}
+.vant{background:var(--oliva);color:var(--creme);border-radius:8px;padding:16px 18px;font-size:14px}
+.vant b{font-family:'Bitter',serif;display:block;margin-bottom:4px;font-size:14.5px}
+
+/* ===== PROVA ===== */
+.prova{background:#efe3c4}
+.papel{background:var(--areia);border:1px solid #d9c690;transform:rotate(-.8deg);padding:clamp(24px,5vw,36px) clamp(18px,5vw,30px);max-width:640px;margin:0 auto;box-shadow:4px 6px 16px rgba(62,47,35,.18)}
+.papel .titpapel{font-family:'Bitter',serif;font-size:10px;letter-spacing:3px;color:#8a6d3b;text-align:center;border-bottom:1px solid #cbb87e;padding-bottom:10px;margin-bottom:18px}
+.papel .txt{font-family:'Caveat',cursive;font-size:clamp(19px,3vw,26px);line-height:1.45;color:#4a3a28}
+.papel .fonte{text-align:right;font-size:12px;color:#8a6d3b;margin-top:14px;font-style:italic}
+.nota-prova{text-align:center;margin-top:24px;font-size:clamp(13px,2vw,15px)}
+
+/* ===== RANKING ===== */
+.rank{background:var(--creme)}
+.podio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:end;max-width:820px;margin:0 auto 18px}
+.pcard{background:#fff;border:2px solid #d9c690;border-radius:12px;padding:22px 14px 18px;text-align:center;box-shadow:0 10px 24px rgba(62,47,35,.1)}
+.pcard .med{font-size:clamp(26px,4vw,32px);display:block;line-height:1;margin-bottom:6px}
+.pcard .med .i3d{display:inline-block}
+.pcard .av2{width:52px;height:52px;border-radius:50%;margin:10px auto 8px;color:#F5EDD8;font-family:'Bitter',serif;font-weight:900;font-size:21px;display:flex;align-items:center;justify-content:center}
+.pcard h3{font-size:17px;color:var(--terra)}
+.pcard .cid{font-size:11px;color:#8a6d3b;font-family:'Bitter',serif;letter-spacing:1px;margin-bottom:8px}
+.pcard .nr{font-family:'Bitter',serif;font-weight:900;color:var(--oliva);font-size:15px;margin-bottom:6px}
+.pcard .nr small{font-weight:400;color:#8a6d3b;font-size:11px}
+.pcard .fr{font-family:'Caveat',cursive;font-size:17px;color:#5c4b38;line-height:1.3}
+.pcard.primeiro{border-color:var(--terra);transform:translateY(-12px);box-shadow:0 18px 36px rgba(181,84,43,.24);background:var(--creme2)}
+.pcard.primeiro .av2{width:60px;height:60px;font-size:24px}
+.voce{background:var(--areia);border:2px dashed var(--terra);border-radius:10px;padding:16px 18px;text-align:center;max-width:820px;margin:0 auto;font-size:clamp(13px,2vw,15px)}
+.voce b{color:var(--terra)}
+
+/* ===== BÔNUS ===== */
+.bonus{background:var(--creme2)}
+.cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:18px}
+.bcard{background:#fff;border:2px solid var(--oliva);border-radius:10px;padding:24px;text-align:center;box-shadow:0 10px 24px rgba(62,47,35,.1)}
+.bcard .bico{font-size:clamp(30px,5vw,40px);line-height:1;margin-bottom:10px}
+.bcard .bico .i3d{display:inline-block}
+.bcard .tagb{display:inline-block;background:var(--terra);color:var(--creme);font-family:'Bitter',serif;font-size:10px;letter-spacing:2px;font-weight:700;padding:5px 12px;border-radius:99px;margin-bottom:12px}
+.bcard h3{color:var(--oliva);font-size:18px;margin-bottom:8px}
+.bcard p{font-size:14px;color:#5c4b38;margin-bottom:12px}
+.bcard .valor{font-family:'Bitter',serif;font-size:14px;color:var(--terra);font-weight:700}
+
+/* ===== OFERTA ===== */
+.oferta{background:linear-gradient(180deg,#8a3d1f,var(--terra));color:var(--creme)}
+.oferta h2{color:var(--creme)}
+.oferta h2 small{color:var(--areia)}
+.oferta .grid{display:grid;gap:44px;align-items:center}
+.pilha{background:rgba(245,237,216,.1);border:1.5px solid rgba(245,237,216,.4);border-radius:10px;padding:clamp(16px,3vw,26px)}
+.pilha table{width:100%;border-collapse:collapse;font-size:clamp(12.5px,2vw,15px)}
+.pilha td{padding:9px 4px;border-bottom:1px dashed rgba(245,237,216,.35)}
+.pilha td:last-child{text-align:right;font-family:'Bitter',serif;white-space:nowrap}
+.pilha tr.total td{border:none;font-weight:700;font-family:'Bitter',serif}
+.pilha tr.total td:last-child{text-decoration:line-through;opacity:.75}
+.preco{text-align:center;margin:18px 0 8px}
+.preco .de{font-size:14px;opacity:.8}
+.preco .valor{font-family:'Bitter',serif;font-weight:900;font-size:clamp(40px,9vw,60px);line-height:1;color:#fff}
+.preco .valor sup{font-size:.45em}
+.pagto{text-align:center;font-size:13px;margin-top:14px;opacity:.9;line-height:1.8}
+.oferta .btn{background:var(--creme);color:var(--terra)!important;box-shadow:0 5px 0 #a99b6d}
+.oferta .btn:hover{box-shadow:0 7px 0 #a99b6d}
+.oferta .trust{color:var(--areia)}
+
+/* ===== LIVRO 3D ===== */
+.livro-area{display:flex;flex-direction:column;align-items:center}
+.flutua{animation:bob 6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.palco{perspective:1300px}
+.livro{position:relative;width:230px;height:325px;margin:0 auto;transform-style:preserve-3d;transform:rotateX(-6deg) rotateY(22deg)}
+.livro>div{position:absolute;top:0;left:0}
+.capa{width:230px;height:325px;transform:translateZ(18px);background:var(--terra);border-radius:2px 6px 6px 2px;overflow:hidden;font-family:'Bitter',serif;color:var(--creme);display:flex;flex-direction:column;box-shadow:inset 0 0 0 1.5px rgba(245,237,216,.3)}
+.capa .fotoC{flex:1;overflow:hidden}
+.capa .fotoC img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.capa .bandaT{flex-shrink:0;background:var(--terra);border-top:2px solid var(--creme);padding:8px 8px 7px;text-align:center}
+.capa .bandaT h3{font-weight:900;font-size:9.5px;line-height:1.3;letter-spacing:1.2px;color:var(--creme)}
+.capa .bandaT .s{font-family:'Caveat',cursive;font-size:11px;line-height:1.1;margin-top:2px;color:var(--creme);opacity:.95}
+.capa .base{flex-shrink:0;background:var(--oliva);font-size:6px;letter-spacing:1.5px;padding:6px 4px;line-height:1.6;text-align:center;color:var(--creme)}
+.fundo{width:230px;height:325px;transform:translateZ(-18px) rotateY(180deg);background:#7e371a;border-radius:2px 6px 6px 2px}
+.lombada{width:36px;height:325px;transform:translateZ(-18px) rotateY(-90deg);transform-origin:left center;background:linear-gradient(90deg,#5f2a13,#93431f 45%,#6e2f16);display:flex;align-items:center;justify-content:center}
+.lombada span{writing-mode:vertical-rl;font-family:'Bitter',serif;font-size:9px;letter-spacing:2px;color:var(--creme);white-space:nowrap}
+.paginas{top:0;left:0;width:230px;height:36px;transform:translateZ(-18px) rotateX(90deg);transform-origin:center top;background:repeating-linear-gradient(180deg,#f7f0dd 0 2px,#e2d4ae 2px 3px)}
+.sombra{width:210px;height:26px;background:radial-gradient(50% 50% at 50% 50%,rgba(43,29,14,.5),transparent 70%);margin:14px auto 0;filter:blur(5px)}
+.mesinha{text-align:center;font-size:clamp(16px,3vw,20px);margin-top:10px}
+.mesinha span{display:inline-block;margin:0 6px}
+.mesinha .i3d{display:block}
+.mesinha span:nth-child(odd){transform:rotate(-8deg)}
+.mesinha span:nth-child(even){transform:rotate(7deg) translateY(2px)}
+
+/* ===== GARANTIA ===== */
+.garantia .cartao{border:2px solid var(--oliva);background:var(--creme2);text-align:center;transform:none}
+.garantia .escudo{font-size:clamp(38px,6vw,46px);margin-bottom:8px;line-height:1}
+.garantia .escudo .i3d{display:inline-block}
+.garantia h3{color:var(--oliva);font-size:clamp(18px,3vw,22px);margin-bottom:10px}
+.garantia .cav{font-size:clamp(18px,3vw,22px);color:var(--terra);margin-top:12px}
+
+/* ===== PRA QUEM ===== */
+.dois{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:18px;max-width:860px;margin:0 auto}
+.listaok,.listano{border-radius:10px;padding:24px}
+.listaok{background:#eef0dd;border:1.5px solid var(--oliva)}
+.listano{background:var(--areia);border:1.5px solid #cbb87e}
+.listaok h3{color:var(--oliva);margin-bottom:12px;font-size:17px}
+.listano h3{color:#8a6d3b;margin-bottom:12px;font-size:17px}
+.listaok li,.listano li{list-style:none;margin-bottom:10px;font-size:clamp(13px,2vw,14.5px);padding-left:28px;position:relative}
+.listaok li:before{content:"✓";position:absolute;left:0;color:var(--oliva);font-weight:900}
+.listano li:before{content:"✕";position:absolute;left:0;color:var(--terra);font-weight:900}
+
+/* ===== FAQ ===== */
+.faq details{background:var(--creme2);border:1.5px solid #d9c690;border-radius:8px;margin-bottom:10px;max-width:760px;margin-left:auto;margin-right:auto}
+.faq summary{cursor:pointer;font-family:'Bitter',serif;font-weight:700;padding:16px 44px 16px 20px;color:var(--terra);list-style:none;position:relative;font-size:clamp(13px,2vw,15px)}
+.faq summary:after{content:"+";position:absolute;right:20px;font-size:20px;top:50%;transform:translateY(-50%)}
+.faq details[open] summary:after{content:"–"}
+.faq details p{padding:0 20px 18px;font-size:clamp(13px,2vw,14.5px)}
+
+/* ===== FECHAMENTO ===== */
+.fim{background:var(--areia);text-align:center;padding:clamp(44px,8vw,70px) 0}
+.fim .cav{font-size:clamp(22px,4vw,34px);color:var(--terra);line-height:1.35;margin-bottom:26px}
+.fim .btn{max-width:420px;margin:0 auto}
+.fim .slogan{margin-top:30px;font-family:'Caveat',cursive;font-size:clamp(20px,4vw,26px);color:var(--oliva)}
+.fim .slogan .i3d{font-size:26px;vertical-align:-4px;margin-right:6px}
+
+/* ===== FOOTER + STICKY ===== */
+footer{background:var(--marrom);color:#c9b995;text-align:center;padding:26px 16px;font-size:12px;line-height:1.8;position:relative;z-index:3}
+footer .marca{font-family:'Bitter',serif;letter-spacing:3px;color:var(--creme);font-weight:700;margin-bottom:6px}
+.sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:50;background:var(--oliva);padding:10px 14px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));box-shadow:0 -6px 18px rgba(0,0,0,.25)}
+.sticky .linha{display:flex;align-items:center;gap:12px;max-width:480px;margin:0 auto}
+.sticky .precos{color:var(--creme);font-family:'Bitter',serif;line-height:1.2;flex-shrink:0}
+.sticky .precos small{display:block;font-size:10px;opacity:.8}
+.sticky .precos b{font-size:18px}
+.sticky .btn{flex:1;padding:12px 10px;font-size:13px;box-shadow:0 3px 0 #4c5c2b;border-radius:8px}
+
+/* ===== NOTIFICAÇÕES ===== */
+.toastbox{position:fixed;left:16px;bottom:16px;z-index:70;max-width:330px;display:flex;flex-direction:column;gap:10px}
+.toast{display:flex;gap:12px;align-items:center;background:#fff;border:1.5px solid #d9c690;border-radius:12px;padding:12px 16px;box-shadow:0 12px 32px rgba(62,47,35,.28);transform:translateX(-130%);opacity:0;transition:transform .55s cubic-bezier(.2,.8,.3,1),opacity .55s}
+.toast.on{transform:none;opacity:1}
+.toast .av{width:38px;height:38px;border-radius:50%;color:#F5EDD8;display:flex;align-items:center;justify-content:center;font-family:'Bitter',serif;font-weight:900;font-size:16px;flex-shrink:0}
+.toast.chamada{border:2px solid var(--terra)}
+.toast .txt b{font-family:'Bitter',serif;font-size:13px;color:var(--terra);display:block;line-height:1.3}
+.toast .txt span{font-size:12.5px;color:#5c4b38;display:block;line-height:1.4}
+.toast .txt .i3d{font-size:13px;vertical-align:-2px}
+.toast .quando{font-size:10px;color:#8a6d3b;font-family:'Bitter',serif;margin-top:3px;display:block;letter-spacing:.5px}
+
+/* ============================================================
+   RESPONSIVO — TODOS OS DISPOSITIVOS
+   ============================================================ */
+@media(min-width:861px){
+  .hero .grid{grid-template-columns:1.15fr .85fr}
+  .oferta .grid{grid-template-columns:.9fr 1.1fr}
+}
+@media(max-width:860px){
+  .hero .grid{grid-template-columns:1fr}
+  .oferta .grid{grid-template-columns:1fr;text-align:center}
+  .oferta .livro-area{margin-bottom:6px}
+  .mesinha,.livro-area>p{text-align:center}
+}
+@media(max-width:720px){
+  body{padding-bottom:calc(78px + env(safe-area-inset-bottom,0px))}
+  .sticky{display:block}
+  .podio{grid-template-columns:1fr;max-width:420px}
+  .pcard.primeiro{transform:none;order:-1}
+  .ing{font-size:clamp(20px,6vw,26px)}
+  .ing.ativo{opacity:.75}
+  .ing.m-off{display:none}
+  .toastbox{left:10px;right:10px;bottom:calc(88px + env(safe-area-inset-bottom,0px));max-width:none}
+  .toast{padding:10px 12px;gap:10px}
+  .toast .av{width:34px;height:34px;font-size:14px}
+  .band span:nth-child(n+9){display:none}
+}
+@media(max-width:560px){
+  .dois{grid-template-columns:1fr}
+  .cartao p{font-size:14.5px}
+  .fotocard{transform:rotate(-1.5deg) scale(.97)}
+  .pilha td{padding:7px 2px}
+  .sticky .btn{font-size:12px;padding:12px 8px}
+  .sticky .precos b{font-size:16px}
+}
+@media(max-width:430px){
+  .palco{transform:scale(.84);transform-origin:top center}
+  .chips{gap:6px}
+  .hero h1{font-size:23px}
+  .btn{letter-spacing:0}
+}
+@media(max-width:360px){
+  .topo{letter-spacing:2px}
+  .toast .txt b{font-size:12px}
+  .toast .txt span{font-size:11.5px}
+  .sticky .precos small{font-size:9px}
+}
+@media (max-height:520px) and (orientation:landscape){
+  .hero{padding:18px 0 24px}
+  section{padding:28px 0}
+  .fim{padding:32px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="topo"><span class="i3d t3-panela"></span>RECEITAS DO AUGUSTO</div>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <span class="ing" style="bottom:6%;left:-10px;--rot:-12deg"><span class="fl"><span class="i3d t3-folha"></span></span></span>
+  <span class="ing" style="bottom:30%;right:-6px;--rot:10deg"><span class="fl"><span class="i3d t3-pimenta"></span></span></span>
+  <div class="wrap grid">
+    <div>
+      <p class="kicker">O CADERNO DE RECEITAS QUE VIROU LIVRO</p>
+      <h1>Ele mora sozinho num sítio, no meio do pasto — e come melhor do que muita gente na cidade.</h1>
+      <p class="sub"><b>100 receitas caseiras</b> — fáceis, rápidas e acessíveis — herdadas dos cadernos escritos à mão pela mãe do Augusto, dona Lurdes. <b>Comida de verdade para o seu dia a dia.</b></p>
+      <div class="chips">
+        <span class="chip">SABOR</span><span class="chip">TRADIÇÃO</span><span class="chip">PRATICIDADE</span><span class="chip">TODO DIA</span>
+      </div>
+      <a class="btn" href="#oferta">QUERO AS 100 RECEITAS DO AUGUSTO →</a>
+      <p class="trust">🔒 PDF na hora no seu e-mail · Garantia incondicional de 7 dias</p>
+    </div>
+    <figure class="fotocard">
+      <span class="ingr tl" aria-hidden="true"><span class="i3d t3-tomate"></span></span>
+      <span class="ingr tr" aria-hidden="true"><span class="i3d t3-alho"></span></span>
+      <span class="ingr bl" aria-hidden="true"><span class="i3d t3-cebola"></span></span>
+      <span class="ingr br" aria-hidden="true"><span class="i3d t3-pao"></span></span>
+      <img src="https://z-cdn-media.chatglm.cn/files/ab7af6cc-095b-4860-b1cf-280a7a056446.png?auth_key=1890373246-03d1152e7a254610a341ca356cb133bc-0-4f5d4e5b32f853dd899c332c5b79e4e2"
+           onerror="this.onerror=function(){fotoFalhou(this)};this.src='augusto.png'"
+           alt="Augusto, de chapéu de fazendeiro, cozinhando na cozinha rústica do sítio com tomate, alho e pão na mesa">
+      <figcaption>— Augusto, no fogão do Sítio São Bento</figcaption>
+    </figure>
+  </div>
+</header>
+
+<!-- ==================== LETREIRO DE INGREDIENTES ==================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <div class="grupo">
+      <span><span class="i3d t3-tomate"></span>TOMATE</span><span><span class="i3d t3-alho"></span>ALHO</span><span><span class="i3d t3-cebola"></span>CEBOLA</span><span><span class="i3d t3-folha"></span>COUVE</span><span><span class="i3d t3-milho"></span>MILHO</span><span><span class="i3d t3-cenoura"></span>CENOURA</span><span><span class="i3d t3-pimenta"></span>PIMENTA</span><span><span class="i3d t3-pao"></span>PÃO CASEIRO</span><span><span class="i3d t3-batata"></span>BATATA-DOCE</span><span><span class="i3d t3-ovo"></span>OVO</span><span><span class="i3d t3-banana"></span>BANANA</span><span><span class="i3d t3-laranja"></span>LARANJA</span><span><span class="i3d t3-ramo"></span>CHEIRO-VERDE</span><span><span class="i3d t3-gota"></span>DOCE DE LEITE</span><span><span class="i3d t3-pote"></span>GELEIA</span><span><span class="i3d t3-cafe"></span>CAFÉ</span>
+    </div>
+    <div class="grupo">
+      <span><span class="i3d t3-tomate"></span>TOMATE</span><span><span class="i3d t3-alho"></span>ALHO</span><span><span class="i3d t3-cebola"></span>CEBOLA</span><span><span class="i3d t3-folha"></span>COUVE</span><span><span class="i3d t3-milho"></span>MILHO</span><span><span class="i3d t3-cenoura"></span>CENOURA</span><span><span class="i3d t3-pimenta"></span>PIMENTA</span><span><span class="i3d t3-pao"></span>PÃO CASEIRO</span><span><span class="i3d t3-batata"></span>BATATA-DOCE</span><span><span class="i3d t3-ovo"></span>OVO</span><span><span class="i3d t3-banana"></span>BANANA</span><span><span class="i3d t3-laranja"></span>LARANJA</span><span><span class="i3d t3-ramo"></span>CHEIRO-VERDE</span><span><span class="i3d t3-gota"></span>DOCE DE LEITE</span><span><span class="i3d t3-pote"></span>GELEIA</span><span><span class="i3d t3-cafe"></span>CAFÉ</span>
+    </div>
+  </div>
+</div>
+
+<div class="faixa">SABOR ✦ TRADIÇÃO ✦ PRATICIDADE ✦ TODO DIA</div>
+
+<!-- ==================== HISTÓRIA ==================== -->
+<section class="historia">
+  <span class="ing" style="top:5%;left:2%;--rot:-14deg"><span class="fl"><span class="i3d t3-tomate"></span></span></span>
+  <span class="ing" style="top:55%;right:2%;--rot:12deg"><span class="fl"><span class="i3d t3-ramo"></span></span></span>
+  <span class="ing m-off" style="bottom:6%;left:9%;--rot:8deg"><span class="fl"><span class="i3d t3-alho"></span></span></span>
+  <div class="wrap">
+    <h2 class="tit"><small>📜 ANTES DE FALAR DE PREÇO</small>Deixa o Augusto te contar uma história</h2>
+    <div class="cartao reveal">
+      <p>Meu nome é Augusto. Moro num sítio pequeno, de terra vermelha, no meio de um pasto que meu pai deixou e eu nunca quis vender. Faz tempo que moro sozinho — e foi morando sozinho que aprendi de verdade a cozinhar.</p>
+      <p>Minha mãe, dona Lurdes, não escreveu livro nenhum. Escreveu é <b>onze cadernos de capa dura, amarrados com barbante</b>, cheios de receita anotada a lápis entre lista de feira e oração de santo. Foi dali que saiu quase tudo que tem neste livro.</p>
+      <p>Escrevi porque comida caseira virou artigo raro, e não devia. Tudo aqui é comida de verdade: ingrediente de feira, panela comum, fogo que qualquer cozinha tem. Tem receita pronta em vinte minutos. Tem receita de domingo, dessas que a casa fica cheirosa por dentro.</p>
+      <p>Cozinhe bastante. E que a sua casa fique cheirosa também.</p>
+      <p class="assin">— Augusto</p>
+    </div>
+    <p class="posscript">Essa carta abre o livro. O resto são 140 páginas disso: receita boa, contada como quem conversa na cozinha.</p>
+  </div>
+</section>
+
+<!-- ==================== FAIXA DE FEIRA ==================== -->
+<div class="band" aria-hidden="true"><span><span class="i3d t3-tomate"></span></span><span><span class="i3d t3-alho"></span></span><span><span class="i3d t3-cebola"></span></span><span><span class="i3d t3-folha"></span></span><span><span class="i3d t3-milho"></span></span><span><span class="i3d t3-cenoura"></span></span><span><span class="i3d t3-pimenta"></span></span><span><span class="i3d t3-pao"></span></span><span><span class="i3d t3-batata"></span></span><span><span class="i3d t3-ovo"></span></span><span><span class="i3d t3-banana"></span></span><span><span class="i3d t3-laranja"></span></span><span><span class="i3d t3-ramo"></span></span><span><span class="i3d t3-cafe"></span></span></div>
+
+<!-- ==================== DOR ==================== -->
+<section class="dor">
+  <span class="ing" style="top:8%;right:4%;--rot:14deg"><span class="fl"><span class="i3d t3-folha"></span></span></span>
+  <span class="ing m-off" style="bottom:8%;left:4%;--rot:-10deg"><span class="fl"><span class="i3d t3-batata"></span></span></span>
+  <div class="wrap">
+    <h2 class="tit"><small>🌙 TODA NOITE, A MESMA PERGUNTA</small>"O que eu faço pro jantar hoje?"</h2>
+    <ul class="dorlista">
+      <li>Você abre o app de delivery, pede o de sempre — e paga caro por comida que chega morna</li>
+      <li>Tenta uma receita da internet e descobre que precisa de ingrediente que só tem em loja gourmet</li>
+      <li>Come pão com ovo de novo, e vai dormir com a sensação de que comer bem não é pra você</li>
+    </ul>
+    <p class="virada">O problema nunca foi você.<br>O problema é que você aprendeu a cozinhar com internet —<br>e o Augusto aprendeu com uma mãe que cozinhava<br>todos os dias havia cinquenta anos.</p>
+  </div>
+</section>
+
+<!-- ==================== CONTEÚDO ==================== -->
+<section class="conteudo">
+  <span class="ing" style="top:3%;right:6%;--rot:-12deg"><span class="fl"><span class="i3d t3-tomate"></span></span></span>
+  <span class="ing m-off" style="top:28%;left:-8px;--rot:10deg"><span class="fl"><span class="i3d t3-cebola"></span></span></span>
+  <span class="ing" style="top:52%;right:1%;--rot:8deg"><span class="fl"><span class="i3d t3-cenoura"></span></span></span>
+  <span class="ing m-off" style="bottom:26%;left:5%;--rot:-8deg"><span class="fl"><span class="i3d t3-milho"></span></span></span>
+  <span class="ing" style="bottom:3%;right:10%;--rot:12deg"><span class="fl"><span class="i3d t3-pimenta"></span></span></span>
+  <span class="ing m-off" style="top:72%;left:10%;--rot:-14deg"><span class="fl"><span class="i3d t3-ovo"></span></span></span>
+  <div class="wrap">
+    <h2 class="tit"><small><span class="i3d t3-panela"></span> O QUE VOCÊ VAI RECEBER</small>100 receitas em 8 capítulos — testadas no fogão de lenha e no fogão comum</h2>
+    <div class="caps">
+      <div class="cap reveal"><span class="n"><span class="i3d t3-cafe"></span>CAP. 1 · 15 RECEITAS</span><h3>Pra Começar o Dia</h3><p>Café de coador, pão caseiro sovado, pão de queijo de liquidificador, mingau, cuscuz com ovo</p></div>
+      <div class="cap reveal"><span class="n"><span class="i3d t3-frango"></span>CAP. 2 · 20 RECEITAS</span><h3>Almoço de Domingo</h3><p>Frango caipira com quiabo e angu, feijoada, costela no bafo, carreteiro, cabidela</p></div>
+      <div class="cap reveal"><span class="n"><span class="i3d t3-panela"></span>CAP. 3 · 15 RECEITAS</span><h3>Panela de Ferro</h3><p>Feijão tropeiro, vaca atolada, moqueca caipira, torresmo pururuca, a couve do Augusto</p></div>
+      <div class="cap reveal"><span class="n"><span class="i3d t3-ovofrito"></span>CAP. 4 · 15 RECEITAS</span><h3>Jantar de Um Homem Só</h3><p>Prontos em até 30 minutos: omelete de arroz, carreteiro de véspera, canja, pizza de frigideira</p></div>
+      <div class="cap reveal"><span class="n"><span class="i3d t3-bolo"></span>CAP. 5 · 15 RECEITAS</span><h3>Do Forno</h3><p>Bolo de fubá cremoso, cuca de banana, rosca trançada, biscoito de nata, sequilhos</p></div>
+      <div class="cap reveal"><span class="n"><span class="i3d t3-gota"></span>CAP. 6 · 10 RECEITAS</span><h3>Doces da Despensa</h3><p>Doce de leite de fazenda, goiabada caseira, pudim, pé-de-moleque, curau</p></div>
+      <div class="cap reveal"><span class="n"><span class="i3d t3-pote"></span>CAP. 7 · 5 RECEITAS</span><h3>Nada Se Perde</h3><p>Farofa de casca de banana, geleia de casca de laranja, picles da horta, banha temperada</p></div>
+      <div class="cap reveal"><span class="n"><span class="i3d t3-ramo"></span>CAP. 8 · 5 RECEITAS</span><h3>Da Roça com Ideias Novas</h3><p>Pesto de couve com castanha, chips de batata-doce, quibe de abóbora com hortelã</p></div>
+    </div>
+    <div class="vantagens">
+      <div class="vant reveal"><b>⏱ Toda receita com tempo e rendimento</b>Você escolhe pelo relógio, não pelo improviso</div>
+      <div class="vant reveal"><b>🥄 Medidas de xícara e colher comuns</b>Sem balança, sem termômetro, sem frescura</div>
+      <div class="vant reveal"><b>🥬 Zero ingrediente gourmet</b>Tudo de feira, açougue e mercado de bairro</div>
+      <div class="vant reveal"><b>💬 Tom de conversa</b>O Augusto avisa onde a receita costuma dar errado</div>
+      <div class="vant reveal"><b>🔥 Funciona em qualquer fogão</b>Testado no fogão de lenha e no fogão comum</div>
+    </div>
+    <div style="text-align:center;margin-top:34px"><a class="btn" href="#oferta" style="max-width:420px;margin:0 auto">COMEÇAR A COZINHAR ADEUS APP →</a></div>
+  </div>
+</section>
+
+<!-- ==================== PROVA ==================== -->
+<section class="prova">
+  <span class="ing" style="top:7%;left:4%;--rot:-10deg"><span class="fl"><span class="i3d t3-pao"></span></span></span>
+  <span class="ing m-off" style="bottom:10%;right:5%;--rot:12deg"><span class="fl"><span class="i3d t3-laranja"></span></span></span>
+  <div class="wrap">
+    <h2 class="tit"><small>📖 NÃO ACREDITA EM RECEITA QUE VOCÊ NÃO VIU</small>Então olha essa página do livro</h2>
+    <div class="papel">
+      <div class="titpapel">✎ DO CADERNO DA DONA LURDES</div>
+      <p class="txt">"O Augusto foi morar sozinho e levei este caderno pra ele copiar o que comia pequeno. Copiou tudo, menos o carreteiro — disse que sabia de cor. Mãe conhece mentira de filho que não quer chorar. Arroz ele ainda queima."</p>
+      <p class="fonte">— Caderno da dona Lurdes, interlúdio do Capítulo 4</p>
+    </div>
+    <p class="nota-prova">O livro guarda <b>8 páginas assim</b> — trechos dos cadernos originais da mãe do Augusto, transcritos entre os capítulos. São as páginas que o leitor fotografa pra mandar pra alguém.</p>
+  </div>
+</section>
+
+<!-- ==================== RANKING DO SÍTIO ==================== -->
+<section class="rank">
+  <span class="ing" style="top:6%;left:3%;--rot:-12deg"><span class="fl"><span class="i3d t3-trofeu"></span></span></span>
+  <span class="ing m-off" style="top:10%;right:4%;--rot:10deg"><span class="fl"><span class="i3d t3-cenoura"></span></span></span>
+  <span class="ing" style="bottom:5%;right:8%;--rot:-8deg"><span class="fl"><span class="i3d t3-folha"></span></span></span>
+  <span class="ing m-off" style="bottom:8%;left:6%;--rot:12deg"><span class="fl"><span class="i3d t3-milho"></span></span></span>
+  <div class="wrap">
+    <h2 class="tit"><small><span class="i3d t3-trofeu"></span> O RANKING DO SÍTIO · ATUALIZADO TODA SEGUNDA</small>Quem mais cozinhou esta semana</h2>
+    <div class="podio">
+      <div class="pcard reveal">
+        <span class="med"><span class="i3d t3-medal t3-prata" data-n="2"></span></span>
+        <div class="av2" style="background:var(--oliva)">R</div>
+        <h3>Rute</h3>
+        <p class="cid">CAMPINA GRANDE · PB</p>
+        <p class="nr">19 receitas <small>esta semana</small></p>
+        <p class="fr">"Fiz o doce de leite três vezes.<br>Nenhum durou até o fim da semana."</p>
+      </div>
+      <div class="pcard primeiro reveal">
+        <span class="med"><span class="i3d t3-medal t3-ouro" data-n="1"></span></span>
+        <div class="av2" style="background:var(--terra)">C</div>
+        <h3>Cida</h3>
+        <p class="cid">UBERLÂNDIA · MG</p>
+        <p class="nr">23 receitas <small>esta semana</small></p>
+        <p class="fr">"O frango com quiabo virou almoço<br>fixo de domingo aqui de casa."</p>
+      </div>
+      <div class="pcard reveal">
+        <span class="med"><span class="i3d t3-medal t3-bronze" data-n="3"></span></span>
+        <div class="av2" style="background:#8a6d3b">J</div>
+        <h3>Jonas</h3>
+        <p class="cid">CURITIBA · PR</p>
+        <p class="nr">17 receitas <small>esta semana</small></p>
+        <p class="fr">"Vivia de delivery. Hoje o pão<br>de queijo aqui de casa é meu."</p>
+      </div>
+    </div>
+    <div class="voce reveal"><b>O 4º lugar tá vago</b> — e na segunda que vem ele pode ser seu. Basta começar pelo café de coador (receita 1) e ir anotando no caderno.</div>
+    <p class="posscript">"Cozinhar é que nem cuidar de horta: o que conta é aparecer todo dia.<br>Segunda que vem tem lista nova — e eu quero ver seu nome nela." — Augusto</p>
+  </div>
+</section>
+
+<!-- ==================== FAIXA DE FEIRA ==================== -->
+<div class="band" aria-hidden="true"><span><span class="i3d t3-tomate"></span></span><span><span class="i3d t3-folha"></span></span><span><span class="i3d t3-milho"></span></span><span><span class="i3d t3-alho"></span></span><span><span class="i3d t3-cenoura"></span></span><span><span class="i3d t3-pao"></span></span><span><span class="i3d t3-pimenta"></span></span><span><span class="i3d t3-cebola"></span></span><span><span class="i3d t3-ovo"></span></span><span><span class="i3d t3-banana"></span></span><span><span class="i3d t3-laranja"></span></span><span><span class="i3d t3-ramo"></span></span></div>
+
+<!-- ==================== BÔNUS ==================== -->
+<section class="bonus">
+  <span class="ing" style="top:10%;right:3%;--rot:12deg"><span class="fl"><span class="i3d t3-folha"></span></span></span>
+  <span class="ing m-off" style="bottom:8%;left:6%;--rot:-12deg"><span class="fl"><span class="i3d t3-alho"></span></span></span>
+  <div class="wrap">
+    <h2 class="tit"><small>🎁 COMPRANDO O LIVRO, VOCÊ LEVA DE BRINDE</small>3 presentes exclusivos</h2>
+    <div class="cards3">
+      <div class="bcard reveal">
+        <div class="bico"><span class="i3d t3-calend"></span></div>
+        <span class="tagb">PRESENTE 1</span>
+        <h3>A Semana no Sítio</h3>
+        <p>Cardápio completo de 7 dias. Nunca mais a pergunta das 19h — as sobras de cada dia já viram o jantar do dia seguinte.</p>
+        <span class="valor">Valor: R$ 27</span>
+      </div>
+      <div class="bcard reveal">
+        <div class="bico"><span class="i3d t3-cesta"></span></div>
+        <span class="tagb">PRESENTE 2</span>
+        <h3>Lista de Compras da Feira</h3>
+        <p>A lista exata que compra a semana inteira. Nada apodrece na geladeira no sábado.</p>
+        <span class="valor">Valor: R$ 19</span>
+      </div>
+      <div class="bcard reveal">
+        <div class="bico"><span class="i3d t3-troca"></span></div>
+        <span class="tagb">PRESENTE 3</span>
+        <h3>Guia de Substituições</h3>
+        <p>Não achou carne de sol? Banha? Queijo meia-cura? 21 trocas testadas, na voz do Augusto.</p>
+        <span class="valor">Valor: R$ 19</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== OFERTA ==================== -->
+<section class="oferta" id="oferta">
+  <span class="ing" style="top:6%;left:5%;--rot:-14deg"><span class="fl"><span class="i3d t3-tomate"></span></span></span>
+  <span class="ing m-off" style="top:38%;right:3%;--rot:10deg"><span class="fl"><span class="i3d t3-ramo"></span></span></span>
+  <span class="ing" style="bottom:7%;left:10%;--rot:8deg"><span class="fl"><span class="i3d t3-batata"></span></span></span>
+  <span class="ing m-off" style="bottom:20%;right:8%;--rot:-10deg"><span class="fl"><span class="i3d t3-pimenta"></span></span></span>
+  <div class="wrap">
+    <h2 class="tit"><small>🛒 QUANTO CUSTA COMER BEM PELO RESTO DO ANO?</small>Um delivery acaba em 40 minutos. Este livro não acaba nunca.</h2>
+    <div class="grid">
+      <div class="livro-area">
+        <div class="flutua">
+          <div class="palco">
+            <div class="livro">
+              <div class="fundo"></div>
+              <div class="lombada"><span>PANELA DE FERRO, CORAÇÃO ABERTO · AUGUSTO</span></div>
+              <div class="paginas"></div>
+              <div class="capa">
+                <div class="fotoC">
+                  <img src="https://z-cdn-media.chatglm.cn/files/ab7af6cc-095b-4860-b1cf-280a7a056446.png?auth_key=1890373246-03d1152e7a254610a341ca356cb133bc-0-4f5d4e5b32f853dd899c332c5b79e4e2"
+                       onerror="this.onerror=function(){capaFalhou(this)};this.src='augusto.png'"
+                       alt="Capa do livro: Augusto cozinhando no sítio">
+                </div>
+                <div class="bandaT">
+                  <h3>PANELA DE FERRO, CORAÇÃO ABERTO</h3>
+                  <p class="s">o caderno de receitas do sítio</p>
+                </div>
+                <div class="base">AUGUSTO · 100 RECEITAS · 3 PRESENTES</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sombra"></div>
+        <div class="mesinha" aria-hidden="true"><span><span class="i3d t3-tomate"></span></span><span><span class="i3d t3-alho"></span></span><span><span class="i3d t3-folha"></span></span><span><span class="i3d t3-milho"></span></span></div>
+        <p style="margin-top:8px;font-family:'Caveat',cursive;font-size:clamp(18px,3vw,21px)">O livro que a dona Lurdes nunca escreveu —<br>guardado por quem cozinha todo dia.</p>
+      </div>
+      <div>
+        <div class="pilha reveal">
+          <table>
+            <tr><td>Ebook com 100 receitas (140 páginas)</td><td>R$ 97</td></tr>
+            <tr><td>Presente 1 — A Semana no Sítio</td><td>R$ 27</td></tr>
+            <tr><td>Presente 2 — Lista de Compras da Feira</td><td>R$ 19</td></tr>
+            <tr><td>Presente 3 — Guia de Substituições</td><td>R$ 19</td></tr>
+            <tr class="total"><td>Valor total</td><td>R$ 162</td></tr>
+          </table>
+        </div>
+        <div class="preco">
+          <p class="de">HOJE, TUDO ISSO POR</p>
+          <p class="valor"><sup>R$</sup> 37</p>
+        </div>
+        <a class="btn" href="#oferta">LEVAR O LIVRO DO AUGUSTO AGORA →</a>
+        <p class="pagto">💳 Cartão em até 12x · ⚡ Pix · 📧 Entrega imediata no e-mail</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== GARANTIA ==================== -->
+<section class="garantia">
+  <span class="ing" style="top:10%;left:4%;--rot:-10deg"><span class="fl"><span class="i3d t3-cenoura"></span></span></span>
+  <span class="ing m-off" style="bottom:10%;right:5%;--rot:12deg"><span class="fl"><span class="i3d t3-laranja"></span></span></span>
+  <div class="wrap">
+    <div class="cartao reveal">
+      <div class="escudo"><span class="i3d t3-escudo"></span></div>
+      <h3>Risco zero. Palavra de quem mexe com terra.</h3>
+      <p>Compre, cozinhe, teste à vontade. Se em até <b>7 dias</b> você achar que o livro não é pra você, é só pedir o reembolso — <b>dinheiro de volta inteiro, sem pergunta, sem cara feia</b>.</p>
+      <p class="cav">"Homem que mexe com terra não tem tempo pra enrolação. Nem com os outros, nem com você."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PRA QUEM É ==================== -->
+<section>
+  <span class="ing" style="top:8%;right:4%;--rot:10deg"><span class="fl"><span class="i3d t3-folha"></span></span></span>
+  <span class="ing m-off" style="bottom:12%;left:4%;--rot:-12deg"><span class="fl"><span class="i3d t3-cebola"></span></span></span>
+  <div class="wrap">
+    <h2 class="tit"><small>🤔 SEJA HONESTO COM VOCÊ</small>Este livro é pra você?</h2>
+    <div class="dois">
+      <div class="listaok reveal">
+        <h3>✅ É pra você se...</h3>
+        <ul>
+          <li>Você mora sozinho e come mal por conveniência — não por escolha</li>
+          <li>Você tem família e quer voltar a comer comida de verdade no dia a dia</li>
+          <li>Você nunca cozinhou (as receitas conversam com você, não te examinam)</li>
+          <li>Você já cozinha, mas quer o repertório da roça: angu, cabidela, cuca, doce de leite de panela</li>
+          <li>Você quer parar de depender de app de delivery</li>
+        </ul>
+      </div>
+      <div class="listano reveal">
+        <h3>✕ Não é pra você se...</h3>
+        <ul>
+          <li>Procura receitas de dieta, light ou contagem de calorias</li>
+          <li>Quer gastronomia fina com foto de revista</li>
+          <li>Não gosta de ler junto com a receita — este livro tem voz, e ela fala o tempo todo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section class="faq" style="background:var(--creme2)">
+  <span class="ing m-off" style="top:10%;left:3%;--rot:-8deg"><span class="fl"><span class="i3d t3-ovo"></span></span></span>
+  <span class="ing" style="bottom:6%;right:4%;--rot:10deg"><span class="fl"><span class="i3d t3-pao"></span></span></span>
+  <div class="wrap">
+    <h2 class="tit"><small>❓ AINDA COM DÚVIDA?</small>Perguntas frequentes</h2>
+    <details><summary>Como eu recebo o livro?</summary><p>Na hora. Assim que o pagamento é confirmado, o PDF chega no seu e-mail. Lê no celular, no tablet, no computador — ou imprime e pendura na cozinha.</p></details>
+    <details><summary>Nunca cozinhei na vida. Vou conseguir?</summary><p>Vai. As receitas foram feitas pra quem aprende sozinho — o Augusto aprendeu sozinho. Medida de xícara comum, linguagem simples, e aviso em toda armadilha.</p></details>
+    <details><summary>Os ingredientes são caros ou difíceis de achar?</summary><p>Não. Feira, açougue e mercado de bairro resolvem tudo. E se faltar algo regional, o Guia de Substituições (presente 3) mostra a troca.</p></details>
+    <details><summary>Tenho pouco tempo. Vale a pena?</summary><p>O Capítulo 4 inteiro é de receitas prontas em até 30 minutos. E o cardápio de 7 dias organiza a semana pra você nunca mais decidir em cima da hora.</p></details>
+    <details><summary>É livro impresso?</summary><p>É ebook (PDF). Chega na hora e não raspa de gordura. Desvantagem: você não pode dizer que "sempre teve esse livro na família" — isso vem com o tempo e o uso.</p></details>
+    <details><summary>E se eu não gostar?</summary><p>7 dias de garantia incondicional. Devolve inteiro, sem perguntas.</p></details>
+    <details><summary>Posso cozinhar as receitas pra vender?</summary><p>Pode — é o melhor elogio que o Augusto pode receber. Só não repasse o PDF adiante, que aí já é falta de respeito com a dona Lurdes.</p></details>
+  </div>
+</section>
+
+<!-- ==================== FECHAMENTO ==================== -->
+<section class="fim">
+  <span class="ing" style="top:12%;left:7%;--rot:-12deg"><span class="fl"><span class="i3d t3-tomate"></span></span></span>
+  <span class="ing" style="top:18%;right:7%;--rot:12deg"><span class="fl"><span class="i3d t3-ramo"></span></span></span>
+  <span class="ing m-off" style="bottom:14%;right:18%;--rot:-8deg"><span class="fl"><span class="i3d t3-alho"></span></span></span>
+  <span class="ing m-off" style="bottom:10%;left:16%;--rot:10deg"><span class="fl"><span class="i3d t3-folha"></span></span></span>
+  <div class="wrap">
+    <h2 class="tit" style="margin-bottom:20px"><small><span class="i3d t3-cafe"></span> O ÚLTIMO PRATO SERVIDO</small>Minha mãe não escreveu livro nenhum.</h2>
+    <p class="cav">Ela escreveu onze cadernos. E eu passei a vida achando<br>que era só pra não esquecer o tempero.<br>Hoje eu sei: era pra alguém encontrar um dia.<br><b>Pode ser você.</b></p>
+    <p class="assin" style="text-align:center;margin:18px 0 30px">— Augusto</p>
+    <a class="btn" href="#oferta">LEVAR AS 100 RECEITAS AGORA →</a>
+    <p class="trust">PDF imediato · 3 presentes inclusos · garantia de 7 dias</p>
+    <p class="slogan"><span class="i3d t3-panela"></span>Cozinhar também é cuidar.</p>
+  </div>
+</section>
+
+<footer>
+  <p class="marca">RECEITAS DO AUGUSTO</p>
+  <p>Panela de Ferro, Coração Aberto · Sítio São Bento<br>
+  Este produto não garante resultados culinários milagrosos — garante é receita boa de gente que cozinha todo dia.<br>
+  © 2025 · Todos os direitos reservados · Este site não é afiliado ao Facebook, Instagram ou Google.</p>
+</footer>
+
+<!-- ===== BARRA FIXA MOBILE ===== -->
+<div class="sticky">
+  <div class="linha">
+    <div class="precos"><small>de R$ 162 por</small><b>R$ 37</b></div>
+    <a class="btn" href="#oferta">QUERO O LIVRO →</a>
+  </div>
+</div>
+
+<!-- ===== CAIXA DAS NOTIFICAÇÕES ===== -->
+<div class="toastbox" id="toastbox" aria-live="polite"></div>
+
+<script>
+/* ============================================================
+   CONFIGURE AQUI: cole o link de pagamento (Kiwify/Hotmart).
+   Ex: "https://pay.kiwify.com.br/abc123"
+   Enquanto estiver em branco, os botões rolam até a oferta.
+   ============================================================ */
+const LINK_CHECKOUT = "";
+
+if(LINK_CHECKOUT && LINK_CHECKOUT.startsWith("http")){
+  document.querySelectorAll('a.btn').forEach(function(b){ b.href = LINK_CHECKOUT; b.target = "_blank"; });
+}
+
+/* ============================================================
+   NOTIFICAÇÕES DE PROVA SOCIAL
+   ------------------------------------------------------------
+   · ativo: false → desliga tudo (compras + chamadas)
+   · Nomes de demonstração: quando as vendas reais começarem,
+     troque pelos primeiros nomes dos compradores.
+   ============================================================ */
+const NOTIF = {
+  ativo: true,
+  duracao: 6500,
+  esperaCompra: [20, 40],
+  esperaChamada: [60, 110],
+  compras: [
+    ['Cida','Uberlândia · MG'],
+    ['Marcos','Goiânia · GO'],
+    ['Helena','Curitiba · PR'],
+    ['Dona Ivone','Salvador · BA'],
+    ['Pedro','Recife · PE'],
+    ['Luciana','Belo Horizonte · MG'],
+    ['Marlene','Fortaleza · CE'],
+    ['Tiago','Campinas · SP'],
+    ['Sofia','Blumenau · SC'],
+    ['Geraldo','Teresina · PI'],
+    ['Ana','São Paulo · SP'],
+    ['Cleber','Cuiabá · MT']
+  ],
+  falas: [
+    'acabou de levar o livro <span class="i3d t3-panela"></span>',
+    'garantiu as 100 receitas agora há pouco',
+    'comprou o ebook com os 3 presentes',
+    'levou o livro do Augusto há 2 minutos'
+  ],
+  chamadas: [
+    ['Helena','Curitiba','salvando um feijão que ficou salgado'],
+    ['Dona Ivone','Salvador','ensinando o ponto certo do doce de leite'],
+    ['Marcos','Goiânia','resolvendo um bolo que não cresceu'],
+    ['Rute','Campina Grande','explicando a pururuca sem espirrar a cozinha toda'],
+    ['Jonas','Curitiba','dando dica de angu que não empelota'],
+    ['Ana','São Paulo','ajudando a escolher a galinha da cabidela']
+  ]
+};
+
+(function(){
+  if(!NOTIF.ativo) return;
+  var box = document.getElementById('toastbox');
+  var cores = ['#6B7F3A','#B5542B','#8a6d3b'];
+  var ocupado = false;
+
+  function rnd(a){ return a[Math.floor(Math.random()*a.length)] }
+  function rndi(min,max){ return Math.floor(Math.random()*(max-min))+min }
+
+  function toastHTML(html, classe){
+    if(ocupado) return;
+    ocupado = true;
+    var t = document.createElement('div');
+    t.className = 'toast ' + (classe||'');
+    t.innerHTML = html;
+    box.appendChild(t);
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ t.classList.add('on') }) });
+    var fechou = false;
+    function fechar(){
+      if(fechou) return; fechou = true;
+      t.classList.remove('on');
+      setTimeout(function(){ t.remove(); ocupado = false }, 550);
+    }
+    var timer = setTimeout(fechar, NOTIF.duracao);
+    t.addEventListener('mouseenter', function(){ clearTimeout(timer) });
+    t.addEventListener('mouseleave', function(){ timer = setTimeout(fechar, 2500) });
+  }
+
+  function avisoCompra(){
+    var c = rnd(NOTIF.compras);
+    var f = rnd(NOTIF.falas);
+    toastHTML(
+      '<div class="av" style="background:'+rnd(cores)+'">'+c[0].charAt(0)+'</div>'+
+      '<div class="txt"><b>'+c[0]+' · '+c[1]+'</b><span>'+f+'</span>'+
+      '<span class="quando">✓ pedido confirmado · acesso enviado por e-mail</span></div>'
+    );
+  }
+
+  function avisoChamada(){
+    var c = rnd(NOTIF.chamadas);
+    toastHTML(
+      '<div class="av" style="background:#B5542B">📞</div>'+
+      '<div class="txt"><b>Augusto está em chamada de receita</b>'+
+      '<span>com '+c[0]+', de '+c[1]+' — '+c[2]+'</span>'+
+      '<span class="quando"><span class="pulse"></span> ao vivo agora · atendimento do sítio</span></div>',
+      'chamada'
+    );
+  }
+
+  function loopCompra(){
+    avisoCompra();
+    setTimeout(loopCompra, rndi(NOTIF.esperaCompra[0], NOTIF.esperaCompra[1])*1000);
+  }
+  function loopChamada(){
+    avisoChamada();
+    setTimeout(loopChamada, rndi(NOTIF.esperaChamada[0], NOTIF.esperaChamada[1])*1000);
+  }
+
+  setTimeout(loopCompra, 9000);
+  setTimeout(loopChamada, 48000);
+})();
+
+/* ===== INGREDIENTES E CARDS ENTRAM NO SCROLL ===== */
+const obs = new IntersectionObserver(function(entradas){
+  entradas.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.classList.add('ativo');
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:.1, rootMargin:'0px 0px -30px 0px'});
+
+document.querySelectorAll('.ing, .reveal').forEach(function(el){ obs.observe(el); });
+
+/* Fallback da foto do hero */
+function fotoFalhou(img){
+  img.style.display='none';
+  var p=document.createElement('div');
+  p.style.cssText='aspect-ratio:4/5;background:linear-gradient(160deg,#8a3d1f,#B5542B);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#F5EDD8;text-align:center;font-family:Bitter,serif;gap:8px;padding:20px';
+  p.innerHTML='<div style="font-size:52px">👨‍🍳</div><div style="font-size:15px;font-weight:900;letter-spacing:1px">AQUI ENTRA A FOTO<br>DO AUGUSTO</div><div style="font-family:Caveat,cursive;font-size:19px">salve a imagem como<br>"augusto.png" nesta pasta</div>';
+  img.parentNode.insertBefore(p,img);
+}
+
+/* Fallback da capa do livro: vira capa tipográfica */
+function capaFalhou(img){
+  var d=document.createElement('div');
+  d.style.cssText='width:100%;height:100%;background:linear-gradient(160deg,#8a3d1f,#B5542B);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#F5EDD8;font-family:Bitter,serif;text-align:center;padding:10px';
+  d.innerHTML='<div style="font-size:5px;letter-spacing:2.5px;opacity:.85">O CADERNO DE RECEITAS DO SÍTIO</div><div style="font-weight:900;font-size:13px;line-height:1.25">PANELA DE FERRO,<br>CORAÇÃO ABERTO</div><div style="font-family:Caveat,cursive;font-size:12px">100 receitas do fogão do Augusto</div><div style="font-size:8px;letter-spacing:6px">✦ ✦ ✦</div>';
+  img.replaceWith(d);
+}
+</script>
+</body>
+</html>
