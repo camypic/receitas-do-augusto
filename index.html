@@ -773,7 +773,6 @@ footer .marca{font-family:'Bitter',serif;letter-spacing:3px;color:var(--creme);f
    Enquanto estiver em branco, os botões rolam até a oferta.
    ============================================================ */
 const LINK_CHECKOUT = "https://pay.kiwify.com.br/tmDCb1X";
-
 if(LINK_CHECKOUT && LINK_CHECKOUT.startsWith("http")){
   document.querySelectorAll('a.btn').forEach(function(b){ b.href = LINK_CHECKOUT; b.target = "_blank"; });
 }
